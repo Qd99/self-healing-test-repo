@@ -1,4 +1,5 @@
-import fs from "fs";
+function undefinedFunction(value) {
+  return value;
+}
 
-const unusedVariable = 42;
-console.log(undefinedFunction(unusedVariable));
+undefinedFunction(42);
