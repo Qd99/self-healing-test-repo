@@ -1,0 +1,19 @@
+name: Self Healing E2E
+
+on:
+  push:
+    branches:
+      - e2e/ci-failure-2026-11-10
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
